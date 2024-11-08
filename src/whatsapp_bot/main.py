@@ -29,7 +29,13 @@ def run():
     Run the crew.
     """
     inputs = {
-        'messages': messages_dict
+        'messages': messages_dict,
+        'sent_by': 'John Doe',
+        'phone_number': '1234567890',
+        'contact_name': 'Jane Doe',
+        'sent_at': '2024-11-07',
+        'message': 'Hello, how are you?',
+        'category': 'work'
     }
     WhatsappCrewCrew().crew().kickoff(inputs=inputs)
 
