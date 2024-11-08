@@ -1,6 +1,6 @@
 #!/usr/bin/env python
 import sys
-from whatsapp_bot.crew import WhatsappCrewCrew
+from crew import WhatsappCrewCrew
 from dotenv import load_dotenv
 import os
 
