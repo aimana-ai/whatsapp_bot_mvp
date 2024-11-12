@@ -17,25 +17,24 @@ import os
 
 # Create a test file with the messages from the last 24 hours
 # and run the crew with it.
-messages_dict = {'message': 'AI LLMs',
-                 'sent_at': '2024-11-07',
-                 'sent_by': 'John Doe',
-                 'contact_name': 'Jane Doe',
-                 'contact_number': 'Jane Doe',
-                 'category': 'work'}
+messages = 'AI LLMs'
+sent_at = '2024-11-07'
+sent_by = 'John Doe'
+contact_name = 'Jane Doe'
+contact_number = 'Jane Doe'
+category = 'work'
 
 def run():
     """
     Run the crew.
     """
     inputs = {
-        'messages': messages_dict,
-        'sent_by': 'John Doe',
-        'phone_number': '1234567890',
-        'contact_name': 'Jane Doe',
-        'sent_at': '2024-11-07',
-        'message': 'Hello, how are you?',
-        'category': 'work'
+        'messages': messages,
+        'sent_at': sent_at,
+        'sent_by': sent_by,
+        'contact_name': contact_name,
+        'contact_number': contact_number,
+        'category': category
     }
     WhatsappCrewCrew().crew().kickoff(inputs=inputs)
 
@@ -45,7 +44,12 @@ def train():
     Train the crew for a given number of iterations.
     """
     inputs = {
-        "messages": messages_dict
+        "messages": messages,
+        'sent_at': sent_at,
+        'sent_by': sent_by,
+        'contact_name': contact_name,
+        'contact_number': contact_number,
+        'category': category
     }
     try:
         WhatsappCrewCrew().crew().train(n_iterations=int(sys.argv[1]), filename=sys.argv[2], inputs=inputs)
@@ -68,7 +72,12 @@ def test():
     Test the crew execution and returns the results.
     """
     inputs = {
-        "messages": messages_dict
+        "messages": messages,
+        'sent_at': sent_at,
+        'sent_by': sent_by,
+        'contact_name': contact_name,
+        'contact_number': contact_number,
+        'category': category
     }
     try:
         WhatsappCrewCrew().crew().test(n_iterations=int(sys.argv[1]), openai_model_name=sys.argv[2], inputs=inputs)
