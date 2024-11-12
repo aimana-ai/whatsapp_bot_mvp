@@ -29,12 +29,7 @@ def run():
     Run the crew.
     """
     inputs = {
-        'messages': messages,
-        'sent_at': sent_at,
-        'sent_by': sent_by,
-        'contact_name': contact_name,
-        'contact_number': contact_number,
-        'category': category
+        'messages': messages
     }
     WhatsappCrewCrew().crew().kickoff(inputs=inputs)
 
@@ -44,12 +39,7 @@ def train():
     Train the crew for a given number of iterations.
     """
     inputs = {
-        "messages": messages,
-        'sent_at': sent_at,
-        'sent_by': sent_by,
-        'contact_name': contact_name,
-        'contact_number': contact_number,
-        'category': category
+        "messages": messages
     }
     try:
         WhatsappCrewCrew().crew().train(n_iterations=int(sys.argv[1]), filename=sys.argv[2], inputs=inputs)
@@ -72,12 +62,7 @@ def test():
     Test the crew execution and returns the results.
     """
     inputs = {
-        "messages": messages,
-        'sent_at': sent_at,
-        'sent_by': sent_by,
-        'contact_name': contact_name,
-        'contact_number': contact_number,
-        'category': category
+        "messages": messages
     }
     try:
         WhatsappCrewCrew().crew().test(n_iterations=int(sys.argv[1]), openai_model_name=sys.argv[2], inputs=inputs)
