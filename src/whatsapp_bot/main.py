@@ -31,7 +31,8 @@ def run():
     inputs = {
         'messages': messages
     }
-    WhatsappCrewCrew().crew().kickoff(inputs=inputs)
+    result = WhatsappCrewCrew().crew().kickoff(inputs=inputs)
+    return result
 
 
 def train():
