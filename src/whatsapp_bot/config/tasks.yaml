@@ -1,9 +1,33 @@
 assistant_task:
   description: >
-    Read the content of the dictionary with the conversations from the past 24 hours and create a 
-    one-paragraph summary pointing out the most important messages.
-    The content of the messages is in a dictionary called messages.
-    These are the messages: {messages}
+    Role: Act as an expert communication analyst and summarizer.
+    Context: You have access to WhatsApp messages stored in the variable {messages}.
+    Task: Analyze these messages and create a comprehensive yet concise summary by:
+    1. Identifying and prioritizing key discussion topics
+    2. Highlighting time-sensitive matters and deadlines
+    3. Extracting specific action items and responsibilities
+    4. Noting important decisions or agreements made
+    5. Flagging any unresolved issues requiring attention
+    6. Recognizing emotional context and urgency levels
+    Format your analysis maintaining logical flow and connections between topics.
+    Approach: Use analytical frameworks to ensure no critical information is missed:
+    - Who: Key participants and their roles
+    - What: Main topics and decisions
+    - When: Timelines and deadlines
+    - Why: Context and reasoning
+    - How: Action items and next steps
   expected_output: >
-    A one-paragraph in Portuguese with a summary of the most important conversations from the past 24 hours
+    Deliver a structured, single-paragraph summary in Portuguese that:
+    1. Opens with the most critical information or urgent matters
+    2. Flows naturally between related topics
+    3. Uses clear, professional language
+    4. Maintains chronological or priority-based organization
+    5. Includes specific details (names, dates, numbers) where relevant if exist in the messages
+    6. Closes with pending actions or follow-ups
+    The summary must only include information present in the messages, ensuring the reader understands:
+    - What requires immediate attention
+    - What decisions were made
+    - What actions need to be taken
+    - What information needs to be followed up
+    The output MUST not contain anything that is not in the messages. You MUST not create anything that is not in the messages.
   agent: assistant
